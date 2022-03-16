@@ -4,6 +4,7 @@
  * Your code here
  */
 require_once("templates/header.php");
+require_once("models/post.php");
 ?>
 <!-- go to input post -->
 <div class="coverElementPost">
@@ -20,6 +21,11 @@ require_once("templates/header.php");
 </div>
 
 <!-- form display post -->
+<?php
+$postImformation = itemsOfPosts();
+foreach ($postImformation as $informationOfPost):
+?>
+
 <div class="showElementPost">
     <div class="header_card">
         <div class="user_decri">
@@ -27,7 +33,7 @@ require_once("templates/header.php");
             <div class="infor">
                 <div class="user_name">Sarath Orn</div>
                 <div class="date">
-                    July 17 at 1.23pm
+                    <?= $informationOfPost['date_post'] ?>
                 </div>
 
             </div>
@@ -39,11 +45,14 @@ require_once("templates/header.php");
         
     </div>
     <div class="infor_user">
-        Hello we are group 8. We really happy for the project to create the Facebook app.
+        <?= $informationOfPost['description'] ?>
+        
     </div>
     <div class="cover_photo">
         <img src="images/3.jpg" class="photo_post" alt="">
     </div>
+
+   
 
     <div class="line"></div>
     <div class="like_place">
@@ -58,11 +67,11 @@ require_once("templates/header.php");
 
         </div>
     </div>
-   
 
 </div>
-
-
+    <?php
+    endforeach
+    ?>
 
 <?php
 require_once("templates/header.php");
