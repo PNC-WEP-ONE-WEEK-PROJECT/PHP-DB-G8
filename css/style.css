@@ -207,7 +207,7 @@ body{
     display: inline-block;
   }
   
-  .btn {
+  .upload-btn-wrapper .btn {
     border: 2px solid gray;
     color: gray;
     background-color: white;
@@ -225,6 +225,7 @@ body{
     opacity: 0;
   }
 .container_post_view .input{
+    padding: 1rem;
     width: 90%;
     resize: none;
     height: 30vh;
@@ -234,4 +235,9 @@ body{
     padding: 0.3rem 2rem;
     border: none;
     color: wheat;
+}
+/* --------- */
+.container_post_view textarea::placeholder{
+    font-size: 1rem;
+    
 }
