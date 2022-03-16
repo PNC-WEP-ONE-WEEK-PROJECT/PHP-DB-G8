@@ -14,12 +14,13 @@ function createItem($drscripitionUser)
     return ($statement->rowCount()==1);
 }
 
-require_once("database.php");
+
 // Get all data from table posts.
 function itemsOfPosts()
 {
     global $db;
-    $statement = $db->query("SELECT post_id, description, date_post, images from posts;");
+    $statement = $db->prepare("SELECT post_id, description, date_post, images from posts;");
+    $statement->execute();
     $postItems = $statement->fetchAll();
     return $postItems;
 }
@@ -41,5 +42,18 @@ function getItemPostsById($post_id)
     $itemPost = $statement->fetch();
     return $itemPost;
 
+}
+
+
+// delete element
+function deleteItem($id)
+{
+    global $db;
+    $statement=$db->prepare("DELETE FROM posts WHERE post_id=:id;");
+    $statement->execute(
+        [
+            ':id'=>$id
+        ]);
+    return ($statement-> rowCount()==1);
 }
 

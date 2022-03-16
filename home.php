@@ -26,7 +26,7 @@ $postImformation = itemsOfPosts();
 foreach ($postImformation as $informationOfPost):
 ?>
 
-<div class="showElementPost">
+<div class="showElementPost ">
     <div class="header_card">
         <div class="user_decri">
             <img src="images/user_ph.png" alt="" class="pro_user" >
@@ -40,7 +40,8 @@ foreach ($postImformation as $informationOfPost):
         </div>
         <div class="item_crud">
             <i class="fas fa-edit img_btnpost edit"></i>
-            <i class="fas fa-trash img_btnpost delete"></i>
+            <a href="controllers/delete_post.php?id=<?php echo $informationOfPost['post_id']; ?>"><i class="fas fa-trash img_btnpost delete"> </i></a>
+            
         </div>
         
     </div>
