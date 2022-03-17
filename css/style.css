@@ -63,6 +63,8 @@ body{
     padding: 1rem 2rem;
     background: #E4E4E4;
     box-shadow: 0 0.1rem 0.5rem black;
+    position: sticky;
+    top: 0;
 }
 .nav_bar .logo{
     color: #4373aa;

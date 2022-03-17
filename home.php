@@ -39,8 +39,10 @@ foreach ($postImformation as $informationOfPost):
             </div>
         </div>
         <div class="item_crud">
-            <i class="fas fa-edit img_btnpost edit"></i>
+           
+            <a href="views/edit_view.php?id=<?php echo $informationOfPost['post_id']; ?>"><i class="fas fa-edit img_btnpost edit"></i></a>
             <a href="controllers/delete_post.php?id=<?php echo $informationOfPost['post_id']; ?>"><i class="fas fa-trash img_btnpost delete"> </i></a>
+
             
         </div>
         

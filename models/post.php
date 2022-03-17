@@ -25,17 +25,10 @@ function itemsOfPosts()
     return $postItems;
 }
 
-// Display posts.
-
-/**
- * Get a single from postItems
- * @return array of posts
- */
-
 function getItemPostsById($post_id)
 {
     global $db;
-    $statement = $db->prepare("SELECT description from posts WHERE id=:id_ofposts;");
+    $statement = $db->prepare("SELECT description from posts WHERE post_id=:id_ofposts;");
     $statement->execute([
         'id_ofposts' => $post_id
     ]);
@@ -43,7 +36,6 @@ function getItemPostsById($post_id)
     return $itemPost;
 
 }
-
 
 // delete element
 function deleteItem($id)
@@ -57,3 +49,17 @@ function deleteItem($id)
     return ($statement-> rowCount()==1);
 }
 
+
+function editPost($id_post, $description_post)
+{
+    global $db;
+    $statement = $db->prepare("UPDATE posts SET description=:post_description where post_id=:postID");
+    $statement->execute([
+        ':post_description'=> $description_post,
+        ':postID'=> $id_post,
+        
+        
+    ]);
+
+    return $statement->rowCount() == 1;
+}
