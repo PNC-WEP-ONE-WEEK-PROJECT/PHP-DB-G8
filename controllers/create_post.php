@@ -4,7 +4,7 @@
 
 
 // -----------
-    $drscripitionUser = $_POST['description'];
+    $description_post = $_POST['description'];
     // $get_user_id = $_POST["post_id"];
      // UPLOAD IMAGE
     $target = "../images/" .$_FILES['myfile']['name'];
@@ -13,7 +13,7 @@
 
 
 
-createItem($drscripitionUser,$file_name);
+createPost($description_post,$file_name);
 
 header('location: /home.php');
 

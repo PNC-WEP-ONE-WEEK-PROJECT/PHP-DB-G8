@@ -4,7 +4,7 @@
  */
 require_once('../models/post.php');
 $id =$_GET['id'];
-$deleteSucess= deleteItem($id);
+$deleteSucess= deletePost($id);
 
 if($deleteSucess){
     header('location: /home.php');//when we remove it have don't show the wirte bg

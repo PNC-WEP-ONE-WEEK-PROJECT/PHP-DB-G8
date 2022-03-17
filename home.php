@@ -22,7 +22,7 @@ require_once("models/post.php");
 
 <!-- form display post -->
 <?php
-$postImformation = itemsOfPosts();
+$postImformation = getPosts();
 foreach ($postImformation as $informationOfPost):
 ?>
 
