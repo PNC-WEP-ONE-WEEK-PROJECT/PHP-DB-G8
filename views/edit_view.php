@@ -13,7 +13,7 @@ require_once("../models/post.php");
     <?php
         $post_id = $_GET['id'];
         
-        $itempost = getItemPostsById($post_id);
+        $itempost = getPostById($post_id);
     ?>
     <form action="../controllers/edit_post.php"  method="post">
         <div class="upload-btn-wrapper">

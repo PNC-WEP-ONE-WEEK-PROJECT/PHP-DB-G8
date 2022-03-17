@@ -3,31 +3,32 @@
 <?php
 require_once('database.php');
 
-function createItem($drscripitionUser,$file_name)
+// Function Creating Post===========================================================================
+function createPost($description_post,$file_name)
 {
     global $db;
-    $drscripitionUser= $_POST['description'];
+    $description_post= $_POST['description'];
     $statement=$db->prepare("INSERT INTO posts (description,images) VALUES(:description,:images)");
     $statement->execute([
-        ':description'=>$drscripitionUser,
+        ':description'=>$description_post,
         ':images'=>$file_name
-
     ]);
     return ($statement->rowCount()==1);
 }
 
-
-// Get all data from table posts.
-function itemsOfPosts()
+// Function Get all Posts (attribute) from Posts table=============================================
+function getPosts()
 {
     global $db;
-    $statement = $db->prepare("SELECT post_id, description, date_post, images from posts order by post_id desc");
+
+    $statement = $db->prepare("SELECT post_id, description, date_post, images FROM posts ORDER BY post_id DESC;");
     $statement->execute();
     $postItems = $statement->fetchAll();
     return $postItems;
 }
 
-function getItemPostsById($post_id)
+// Function Get only id from posts table===========================================================
+function getPostById($post_id)
 {
     global $db;
     $statement = $db->prepare("SELECT description from posts WHERE post_id=:id_ofposts;");
@@ -39,8 +40,8 @@ function getItemPostsById($post_id)
 
 }
 
-// delete element
-function deleteItem($id)
+// Function Delete element by using id of table posts.
+function deletePost($id)
 {
     global $db;
     $statement=$db->prepare("DELETE FROM posts WHERE post_id=:id;");
@@ -51,31 +52,28 @@ function deleteItem($id)
     return ($statement-> rowCount()==1);
 }
 
-// edit both image and description
+// Function use to edit both image and description
 function editPost($id_post, $description_post,$image)
 {
     global $db;
-    $statement = $db->prepare("UPDATE posts SET description=:post_description,images=:myimg where post_id=:postID");
+    $statement = $db->prepare("UPDATE posts SET description=:post_description,images=:myimg WHERE post_id=:postID");
     $statement->execute([
         ':post_description'=> $description_post,
         ':postID'=> $id_post,
         ':myimg'=>$image
         
     ]);
-
     return $statement->rowCount() == 1;
 }
 
-// edit only description
+// Function use to edit only description
 function editPosts($id_post, $description_post)
 {
     global $db;
-    $statement = $db->prepare("UPDATE posts SET description=:post_description where post_id=:postID");
+    $statement = $db->prepare("UPDATE posts SET description=:post_description WHERE post_id=:postID");
     $statement->execute([
         ':post_description'=> $description_post,
         ':postID'=> $id_post,
-       
     ]);
-
     return $statement->rowCount() == 1;
 }

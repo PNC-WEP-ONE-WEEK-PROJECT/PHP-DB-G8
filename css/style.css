@@ -68,6 +68,7 @@ body{
     box-shadow: 0 0.1rem 0.5rem black;
     position: sticky;
     top: 0;
+    
 }
 .nav_bar .logo{
     color: #4373aa;
@@ -171,6 +172,7 @@ body{
    font-size: 1.3rem;
 }
 .showElementPost .cover_photo{
+
     width: 98%;
    
     /* background: #000; */
