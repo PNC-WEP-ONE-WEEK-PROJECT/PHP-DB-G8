@@ -3,13 +3,15 @@
 <?php
 require_once('database.php');
 
-function createItem($drscripitionUser)
+function createItem($drscripitionUser,$file_name)
 {
     global $db;
     $drscripitionUser= $_POST['description'];
-    $statement=$db->prepare("INSERT INTO posts (description) VALUES(:description)");
+    $statement=$db->prepare("INSERT INTO posts (description,images) VALUES(:description,:images)");
     $statement->execute([
-        ':description'=>$drscripitionUser
+        ':description'=>$drscripitionUser,
+        ':images'=>$file_name
+
     ]);
     return ($statement->rowCount()==1);
 }
@@ -49,16 +51,30 @@ function deleteItem($id)
     return ($statement-> rowCount()==1);
 }
 
+// edit both image and description
+function editPost($id_post, $description_post,$image)
+{
+    global $db;
+    $statement = $db->prepare("UPDATE posts SET description=:post_description,images=:myimg where post_id=:postID");
+    $statement->execute([
+        ':post_description'=> $description_post,
+        ':postID'=> $id_post,
+        ':myimg'=>$image
+        
+    ]);
 
-function editPost($id_post, $description_post)
+    return $statement->rowCount() == 1;
+}
+
+// edit only description
+function editPosts($id_post, $description_post)
 {
     global $db;
     $statement = $db->prepare("UPDATE posts SET description=:post_description where post_id=:postID");
     $statement->execute([
         ':post_description'=> $description_post,
         ':postID'=> $id_post,
-        
-        
+       
     ]);
 
     return $statement->rowCount() == 1;

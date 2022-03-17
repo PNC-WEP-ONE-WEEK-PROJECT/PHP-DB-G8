@@ -52,7 +52,7 @@ foreach ($postImformation as $informationOfPost):
         
     </div>
     <div class="cover_photo">
-        <img src="images/3.jpg" class="photo_post" alt="">
+        <img src="images/<?php echo $informationOfPost['images']?>" class="photo_post" alt="">
     </div>
 
    

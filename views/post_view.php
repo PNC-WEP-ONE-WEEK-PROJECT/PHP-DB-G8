@@ -8,7 +8,7 @@ require_once("../templates/header.php");
 
 <div class="container_post_view">
     <!-- Your code here -->
-    <form action="../controllers/create_post.php"  method="post">
+    <form action="../controllers/create_post.php"  method="post" enctype="multipart/form-data">
         <div class="upload-btn-wrapper">
             
             <button class="btn"><i class="fas fa-upload text-muted fs-4 "></i>Upload a file</button>

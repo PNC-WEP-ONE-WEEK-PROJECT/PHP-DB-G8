@@ -18,7 +18,7 @@ require_once("../models/post.php");
     <form action="../controllers/edit_post.php"  method="post">
         <div class="upload-btn-wrapper">
             <button class="btn"><i class="fas fa-upload text-muted fs-4 "></i>Upload a file</button>
-            <input type="file" name="myfile" />
+            <input type="file"  name="myfile">
         </div>
 
         <br>
