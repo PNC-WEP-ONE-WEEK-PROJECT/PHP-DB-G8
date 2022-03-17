@@ -10,7 +10,10 @@ require_once("models/post.php");
 <div class="coverElementPost">
     <div class="user_decri">
         <img src="images/user_ph.png" alt="" class="pro_user" >
-        <input type="text" class="input"  placeholder="What are you thinking about..............">
+        <form action="../controllers/create_post.php"  method="post" class="form_staus">
+            <input type="text" name="description" class="input"  placeholder="What are you thinking about..............">
+            <input type="submit"  value="post" class="btn_input">
+        </form>
     </div>
     <div class="line"></div>
    
@@ -52,7 +55,7 @@ foreach ($postImformation as $informationOfPost):
         
     </div>
     <div class="cover_photo">
-        <img src="images/<?php echo $informationOfPost['images']?>" class="photo_post" alt="">
+        <img src="images/<?php  echo $informationOfPost['images'];?>" class="photo_post" alt="">
     </div>
 
    

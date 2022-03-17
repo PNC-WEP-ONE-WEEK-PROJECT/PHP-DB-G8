@@ -21,7 +21,7 @@ function createItem($drscripitionUser,$file_name)
 function itemsOfPosts()
 {
     global $db;
-    $statement = $db->prepare("SELECT post_id, description, date_post, images from posts;");
+    $statement = $db->prepare("SELECT post_id, description, date_post, images from posts order by post_id desc");
     $statement->execute();
     $postItems = $statement->fetchAll();
     return $postItems;

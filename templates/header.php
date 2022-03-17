@@ -22,10 +22,13 @@
             Facebook
         </div>
         <div class="menu">
-            <i class="fas fa-home text-muted fs-4 " id="home"></i>
-            <i class="fas fa-globe-americas text-muted fs-4" id="news"></i>
-            <i class="fas fa-users text-muted fs-4" id="friends"></i>
-            <i class="fas fa-bell text-muted fs-4" id="notifigetion"></i>
+            <a href=""><i class="fas fa-home text-muted fs-4 " id="home"></i></a>
+            <a href=""><i class="fas fa-globe-americas text-muted fs-4" id="news"></i></a>
+            <a href=""><i class="fas fa-users text-muted fs-4" id="friends"></i></a>
+            <a href=""><i class="fas fa-bell text-muted fs-4" id="notifigetion"></i></a>
+            
+            
+         
 
         </div>
         <div class="sideba_left">

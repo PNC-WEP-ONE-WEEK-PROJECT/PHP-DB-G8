@@ -4,6 +4,9 @@ body{
     font-family: sans-serif;
     background:#FFFFFF;
 }
+.active{
+    color: #245EA1;
+}
 .contener1{
     display: flex;
     padding:7rem 2rem;
@@ -84,19 +87,39 @@ body{
 /* home page */
 .coverElementPost,.showElementPost{
     background: #C4C4C4;
-    width: 65%;
+    width: 50%;
     margin: 2rem auto;
     border-radius: 7px;
     padding: 1rem 1rem;
+}
+.coverElementPost .user_decri{
+    display: flex;
+}
+.coverElementPost .user_decri .form_staus{
+    display: flex;
+    width: 100%;
 }
 .user_decri img{
     height: 60px; width: 60px;
     border-radius: 50%;
     
 }
+.user_decri  .btn_input{
+    height: 7vh;
+    margin-top: 0.6rem;
+    background: #4373aa;
+    color: white;
+    border-radius: 0 7px 7px 0  ;
+    padding: 0.3rem;
+   
+    outline: none;
+    border: none;
+}
 .user_decri .input{
-    width: 75%;
-    border-radius: 7px;
+    width: 90%;
+    height: 7vh;
+    margin-top: 0.6rem;
+    border-radius: 7px 0 0 7px ;
     padding: 0.3rem;
     margin-left: 1rem;
     outline: none;
@@ -129,6 +152,7 @@ body{
 }
 .showElementPost .header_card .user_decri{
     display: flex;
+   
 }
 .showElementPost .header_card .user_decri .infor{
     margin: 0.4rem 1rem;
@@ -138,22 +162,23 @@ body{
 }
 .showElementPost .header_card .item_crud .edit{
     color: #245EA1;
-   font-size: 1.7rem;
+   font-size: 1.3rem;
    margin-right: 8px;
 }
 .showElementPost .header_card .item_crud .delete{
     
    color: #FF6109;
-   font-size: 1.7rem;
+   font-size: 1.3rem;
 }
 .showElementPost .cover_photo{
-    width: 85%;
-    background: #000;
+    width: 98%;
+   
+    /* background: #000; */
     margin: 1rem auto;
 
 }
 .showElementPost .cover_photo .photo_post{
-    width: 100%;
+    width: 100%; 
 
 }
 .showElementPost .infor_user{
@@ -169,12 +194,12 @@ body{
 .element_like_comment .like_element{
     border: none;
     background: #C4C4C4;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 .element_like_comment .comment_element{
     border: none;
     background: #C4C4C4;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 
