@@ -52,7 +52,21 @@ foreach ($postImformation as $informationOfPost):
         
     </div>
     <div class="infor_user">
-        <?= $informationOfPost['description'] ?>
+        
+    <?php 
+        if (!empty($informationOfPost['images'])) {
+    ?>
+        <div class="not_status"><?php echo $informationOfPost['description']; ?></div>    
+
+    <?php    
+        }else{
+    ?>
+        <div class="status"><?php echo $informationOfPost['description']; ?></div>   
+
+    <?php
+        }
+    ?>
+    
         
     </div>
     <div class="cover_photo">

@@ -270,3 +270,28 @@ body{
     font-size: 1rem;
     
 }
+
+.not_status{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+    
+.status {
+    height: 50vh;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Patrick Hand', cursive;
+    text-align: center;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-left: -2rem;
+    margin-top: 10px;
+    
+}
