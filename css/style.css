@@ -270,3 +270,6 @@ body{
     font-size: 1rem;
     
 }
+.active{
+    color: #417CC1;
+}
