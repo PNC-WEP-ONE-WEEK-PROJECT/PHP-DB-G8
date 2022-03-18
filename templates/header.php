@@ -21,15 +21,20 @@
         <div class="logo">
             Facebook
         </div>
+        <?php
+        $page = "";
+        if (isset($_GET['page'])) {
+          $page = $_GET['page'];
+        } else {
+          $page = "home";
+        }
+    ?>
         <div class="menu">
-            <a href=""><i class="fas fa-home text-muted fs-4 " id="home"></i></a>
-            <a href=""><i class="fas fa-globe-americas text-muted fs-4" id="news"></i></a>
-            <a href=""><i class="fas fa-users text-muted fs-4" id="friends"></i></a>
-            <a href=""><i class="fas fa-bell text-muted fs-4" id="notifigetion"></i></a>
+            <a class="" aria-current="page" href="?page=home"><i class="fas fa-home fs-4  <?php if($page == 'home'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="home"></i></a>
+            <a class="" href="?page=about"><i  class="fas fa-globe-americas  fs-4 <?php if($page == 'about'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>"  id="news"></i></a>
+            <a  class="" href="?page=friend"><i class="fas fa-users  fs-4 <?php if($page == 'friend'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="friends"></i></a>
+            <a  class="" href="?page=notification"><i class="fas fa-bell  fs-4 <?php if($page == 'notification'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="notifigetion"></i></a>
             
-            
-         
-
         </div>
         <div class="sideba_left">
             <i class="fab fa-facebook-messenger  fs-4"></i>

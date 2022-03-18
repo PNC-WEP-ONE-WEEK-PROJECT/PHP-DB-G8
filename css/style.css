@@ -271,6 +271,7 @@ body{
     
 }
 
+
 .not_status{
     font-weight: bold;
     font-family: sans-serif;
@@ -294,4 +295,8 @@ body{
     margin-left: -2rem;
     margin-top: 10px;
     
+}
+
+.active{
+    color: #417CC1;
 }
