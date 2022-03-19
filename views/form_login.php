@@ -22,7 +22,10 @@
             <img src="images/bg.png" alt="" class="bg_first">
         </div>
       
+
         <form class="formLoginIn" action="../index.php" method="post">
+
+
             <div>
                 <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
             </div>
@@ -36,7 +39,7 @@
                 <a href="" class="forgot_pass">forgot password</a>
             </p>
             <p class="para">
-            <a href="" class="createAcc">Create new account</a>
+            <a href="../views/create_acc.php" class="createAcc">Create new account</a>
 
             </p>
         </form>
