@@ -20,7 +20,7 @@ require_once("models/post.php");
     <div class="button_post">
         <a href="views/post_view.php"><i class="fas fa-file-image img_btnpost"></i> Photo/Video</a> 
     </div>
-  
+
 </div>
 
 <!-- form display post -->
@@ -44,8 +44,8 @@ foreach ($postImformation as $informationOfPost):
         </div>
         <div class="item_crud">
            
-            <a href="views/edit_view.php?id=<?php echo $informationOfPost['post_id']; ?>"><i class="fas fa-edit img_btnpost edit"></i></a>
-            <a href="controllers/delete_post.php?id=<?php echo $informationOfPost['post_id']; ?>"><i class="fas fa-trash img_btnpost delete"> </i></a>
+            <a href="views/edit_view.php?id=<?php echo $informationOfPost['id_post']; ?>"><i class="fas fa-edit img_btnpost edit"></i></a>
+            <a href="controllers/delete_post.php?id=<?php echo $informationOfPost['id_post']; ?>"><i class="fas fa-trash img_btnpost delete"> </i></a>
 
             
         </div>
@@ -56,12 +56,12 @@ foreach ($postImformation as $informationOfPost):
     <?php 
         if (!empty($informationOfPost['images'])) {
     ?>
-        <div class="not_status"><?php echo $informationOfPost['description']; ?></div>    
+        <div class="not_status"><?php echo $informationOfPost['description_post']; ?></div>    
 
     <?php    
         }else{
     ?>
-        <div class="status"><?php echo $informationOfPost['description']; ?></div>   
+        <div class="status"><?php echo $informationOfPost['description_post']; ?></div>   
 
     <?php
         }

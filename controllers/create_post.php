@@ -13,7 +13,7 @@
 
 
 
-createPost($description_post,$file_name);
+createPost($description_post,$file_name,1);
 
 header('location: /home.php');
 

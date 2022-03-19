@@ -23,7 +23,7 @@ require_once("../models/post.php");
 
         <br>
         <input type="hidden" value="<?php echo $post_id ;?>" name="postID">
-        <textarea placeholder="What are you thinking about.............." class="input" name="descripe" value="<?= $itempost['description'] ;?>"><?= $itempost['description'] ?> </textarea>
+        <textarea placeholder="What are you thinking about.............." class="input" name="descripe" value="<?= $itempost['description_post'] ;?>"><?= $itempost['description_post'] ?> </textarea>
         
         <br>
         <input type="submit" value="Change" class="btn_post">
