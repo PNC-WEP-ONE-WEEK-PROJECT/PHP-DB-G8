@@ -37,7 +37,7 @@ foreach ($postImformation as $informationOfPost):
                 <div class="user_name">Sarath Orn</div>
                 <div class="date">
                     <?php date_default_timezone_set('Asia/Phnom_Penh'); ?>
-                    <?= $informationOfPost['date_post'] = date("D M j Y G:i:s "); ?>
+                    <?= $informationOfPost['date_post'] = date("D M j Y G:i:s a"); ?>
                 </div>
 
             </div>

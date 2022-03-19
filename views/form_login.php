@@ -52,14 +52,19 @@
             $name = $_POST['username'];
             $password = $_POST['pswd'];
 
-            if (!empty($name) and !empty($password) and $name == $userName and $password == $userPass) {
-                $_SESSION['login'] = $name;
-                header('Location: home.php');
-            } 
-            // else {
-            //     echo '<script>alert("Please login again because your name and password are not valid")</script>';
+            if (!empty($name) and !empty($password) and $name == $userName) {
+                $test = password_hash($password,PASSWORD_DEFAULT);
+    
+                if(password_verify($userPass, $test)) {
+                    $_SESSION['login'] = $name;
+                    header('Location: home.php');
+                }
                 
-            // }
+            } 
+            else {
+                echo '<script>alert("Please login again because your name and password are not valid")</script>';
+                
+            }
         }
     ?>
 

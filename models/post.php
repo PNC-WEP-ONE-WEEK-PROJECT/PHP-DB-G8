@@ -80,15 +80,17 @@ function editPosts($id_post, $description_post)
 }
 
 // add user
-function adduser($user_name,$user_gender,$user_email,$user_password)
+function adduser($user_name,$user_gender,$user_birth,$user_email,$user_password)
 {
     global $db;
-    $statement=$db->prepare("INSERT INTO users (name,gender_gender,email_user,password_user) VALUES (:name_user,:gender,:email_user,:password_user)");
+    $statement=$db->prepare("INSERT INTO users (name,gender_gender,dateofbirth_user,email_user,password_user) VALUES (:name_user,:gender,:birth,:email_user,:password_user)");
     $statement->execute([
         ':name_user'=>$user_name,
         ':gender'=>$user_gender,
+        ':birth'=>$user_birth,
         ':email_user'=>$user_email,
         ':password_user'=>$user_password
+        
     ]);
     return ($statement->rowCount()==1);
 }

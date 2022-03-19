@@ -37,7 +37,9 @@
             
         </div>
         <div class="sideba_left">
-            <i class="fab fa-facebook-messenger  fs-4"></i>
+            <a href="" class="profile">
+                <img src="../images/user_ph.png "class="img_pro" alt="">
+            </a>
             <a href="index.php">LOG OUT</a>
         </div>
 

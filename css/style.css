@@ -88,9 +88,16 @@ body{
     margin:0 1rem;
 
 }
-.nav_bar .sideba_left i{
+.nav_bar .sideba_left .profile{
     margin-right: 0.5rem;
+    width: 10%;
+    text-decoration: none;
 
+}
+.nav_bar .sideba_left .profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 /* home page */
@@ -286,7 +293,7 @@ body{
 }
     
 .status {
-    height: 50vh;
+    height: 65vh;
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -302,6 +309,7 @@ body{
     width: 100%;
     margin-left: -2rem;
     margin-top: 10px;
+    margin-bottom: -2rem;
     
 }
 
