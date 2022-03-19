@@ -8,6 +8,7 @@
 <!-- MAIN -----------------------------------------  -->
 <div class="main-content">
     <main>
+
         <?php
 
         // 0 - We set the  path by default to home
@@ -30,6 +31,28 @@
         ?>
     </main>
 </div>
+
+    <?php
+        $show = 'views/form_login.php';
+        if (isset($_SESSION['login']) and !empty($_SESSION['login']))
+        {
+            $show = 'views/navbar.php';
+        }
+        require_once $show;
+    
+        $userPass= "123qwe";
+        $password = $_POST['pswd'];
+        // echo md5($password);
+        // echo sha1($password);
+        $test = password_hash($password,PASSWORD_DEFAULT);
+    
+        if(password_verify($pass, $test)) {
+            require_once("home.php");
+        } else {
+            echo "Please log in again!!!
+            Don't forget log in!!!";
+        }
+    ?>
 
 <!-- FOOTER -----------------------------------------  -->
 <?php

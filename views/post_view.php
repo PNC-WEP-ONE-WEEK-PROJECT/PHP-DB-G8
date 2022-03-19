@@ -22,14 +22,7 @@ require_once("../templates/header.php");
         <input type="submit" value="POST" class="btn_post">
         
     </form>
-
-
-
 </div>
-
-
-
-
 <?php
 require_once("../templates/header.php");
 ?>

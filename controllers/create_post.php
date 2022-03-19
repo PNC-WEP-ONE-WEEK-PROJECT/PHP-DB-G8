@@ -2,7 +2,6 @@
     require_once("../templates/header.php");
     require_once("../models/post.php");
 
-
 // -----------
     $description_post = $_POST['description'];
     // $get_user_id = $_POST["post_id"];
