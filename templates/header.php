@@ -37,7 +37,7 @@
             
         </div>
         <div class="sideba_left">
-            <a href="" class="profile">
+            <a href="views/profile_view.php" class="profile">
                 <img src="../images/user_ph.png "class="img_pro" alt="">
             </a>
             <a href="index.php">LOG OUT</a>

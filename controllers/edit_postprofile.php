@@ -13,5 +13,5 @@ if(!empty($image)){
     editPost($id_post, $description_post,$image);
 };
 
-header('location: /home.php');
+header('location: /../views/profile_view.php');
 

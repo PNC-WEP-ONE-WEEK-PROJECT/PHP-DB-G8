@@ -31,8 +31,6 @@
         ?>
     </main>
 </div>
-
-
 <!-- FOOTER -----------------------------------------  -->
 <?php
 require_once('templates/footer.php');

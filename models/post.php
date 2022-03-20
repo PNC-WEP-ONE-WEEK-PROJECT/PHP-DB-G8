@@ -94,3 +94,6 @@ function adduser($user_name,$user_gender,$user_birth,$user_email,$user_password)
     ]);
     return ($statement->rowCount()==1);
 }
+
+
+
