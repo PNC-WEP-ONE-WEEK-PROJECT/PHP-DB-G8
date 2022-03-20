@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +14,10 @@
 </head>
 <body>
     <!-- home  -->
+    <?php 
+    require_once("models/post.php");
+        $userItems = getUsers();
+    ?>
     <div class="contener1">
         <div class="text">
             <h1 class="nameOfapp">
@@ -24,7 +31,7 @@
       
 
         <form class="formLoginIn" action="../index.php" method="post">
-
+        <input type="hidden" value='' >
 
             <div>
                 <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
@@ -45,27 +52,36 @@
         </form>
     </div>
     <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $userName = "Sarath";
-            $userPass = "123qwe";
 
-            $name = $_POST['username'];
-            $password = $_POST['pswd'];
-
-            if (!empty($name) and !empty($password) and $name == $userName) {
-                $test = password_hash($password,PASSWORD_DEFAULT);
+        // require_once("models/post.php");
+        // $userItems = getUsers();
+        foreach($userItems as $user) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $userName = $user['name'];
+                $userPass = $user['password_user'];
+                $userId = $user['id_user'];
     
-                if(password_verify($userPass, $test)) {
-                    $_SESSION['login'] = $name;
-                    header('Location: home.php');
-                }
-                
-            } 
-            else {
-                echo '<script>alert("Please login again because your name and password are not valid")</script>';
-                
+                $name = $_POST['username'];
+                $password = $_POST['pswd'];
+    
+                if (!empty($name) and !empty($password) and $name == $userName) {
+                    $test = password_hash($password,PASSWORD_DEFAULT);
+        
+                    if(password_verify($userPass, $test)) {
+                        // $_SESSION['login'] = $name;
+                        $_SESSION['id'] = $userId ;
+                        $_SESSION['name'] = $name;
+                        header('Location: home.php');
+                    }
+                    
+                } 
+                // else {
+                //     echo '<script>alert("Please login again because your name and password are not valid")</script>';
+                    
+                // }
             }
         }
+        
     ?>
 
 </body>

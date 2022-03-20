@@ -188,7 +188,7 @@ body{
 }
 .showElementPost .cover_photo{
 
-    width: 98%;
+    width: 100%;
    
     /* background: #000; */
     margin: 1rem auto;
@@ -196,6 +196,10 @@ body{
 }
 .showElementPost .cover_photo .photo_post{
     width: 100%; 
+    margin-left: -2rem;
+   
+    
+    
 
 }
 .showElementPost .infor_user{
@@ -293,7 +297,7 @@ body{
 }
     
 .status {
-    height: 65vh;
+    height: 60vh;
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -309,7 +313,7 @@ body{
     width: 100%;
     margin-left: -2rem;
     margin-top: 10px;
-    margin-bottom: -2rem;
+    margin-bottom: -0.8rem;
     
 }
 

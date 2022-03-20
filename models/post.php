@@ -4,7 +4,7 @@
 require_once('database.php');
 
 // Function Creating Post===========================================================================
-function createPost($description_post,$file_name,$userID)
+function createPost($description_post,$file_name, $userId)
 {
     global $db;
     $description_post= $_POST['description'];
@@ -12,7 +12,7 @@ function createPost($description_post,$file_name,$userID)
     $statement->execute([
         ':description'=>$description_post,
         ':images'=>$file_name,
-        ':userID' => $userID
+        ':userID' => $userId
     ]);
     return ($statement->rowCount()==1);
 }
@@ -21,8 +21,7 @@ function createPost($description_post,$file_name,$userID)
 function getPosts()
 {
     global $db;
-
-    $statement = $db->prepare("SELECT id_post, description_post, date_post, images FROM userposts ORDER BY id_post DESC;");
+    $statement = $db->prepare("SELECT id_post, description_post, date_post, images, id_user FROM userposts ORDER BY id_post DESC;");
     $statement->execute();
     $postItems = $statement->fetchAll();
     return $postItems;
@@ -38,7 +37,6 @@ function getPostById($post_id)
     ]);
     $itemPost = $statement->fetch();
     return $itemPost;
-
 }
 
 // Function Delete element by using id of table posts.
@@ -94,3 +92,35 @@ function adduser($user_name,$user_gender,$user_birth,$user_email,$user_password)
     ]);
     return ($statement->rowCount()==1);
 }
+
+function getUsers()
+{
+    global $db;
+    $statement = $db->prepare("SELECT id_user, name, password_user FROM users ORDER BY id_user DESC;");
+    $statement->execute();
+    $postItems = $statement->fetchAll();
+    return $postItems;
+}
+
+
+function getUserName() {
+    global $db;
+    $statement = $db->prepare("SELECT users.name
+    FROM users
+    JOIN userposts ON userposts.id_user = users.id_user");
+    $statement->execute();
+    $userName = $statement->fetch();
+    return $userName;
+
+}
+
+// function getUserId($user_id) {
+//     global $db;
+//     $name = getUserName();
+//     $statement = $db->prepare("SELECT users.id_user
+//     FROM users
+//     WHERE users.name = $name");
+//     $statement->execute();
+//     $userId = $statement->fetch();
+//     return $userId;
+// }
