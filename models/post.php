@@ -93,6 +93,7 @@ function adduser($user_name,$user_gender,$user_birth,$user_email,$user_password)
     return ($statement->rowCount()==1);
 }
 
+
 function getUsers()
 {
     global $db;
@@ -114,13 +115,5 @@ function getUserName() {
 
 }
 
-// function getUserId($user_id) {
-//     global $db;
-//     $name = getUserName();
-//     $statement = $db->prepare("SELECT users.id_user
-//     FROM users
-//     WHERE users.name = $name");
-//     $statement->execute();
-//     $userId = $statement->fetch();
-//     return $userId;
-// }
+
+
