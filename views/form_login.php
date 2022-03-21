@@ -75,6 +75,7 @@ session_start();
                     }
                     
                 } 
+                
                 // else {
                 //     echo '<script>alert("Please login again because your name and password are not valid")</script>';
                     

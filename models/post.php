@@ -115,5 +115,23 @@ function getUserName() {
 
 }
 
+// like post--------------
+function like_post($user_id, $post_id){
+    global $db;
+    $statement = $db->prepare("INSERT INTO likes (id_user,id_post) VALUES (:userId, :postID);");
+    $statement->execute([
+        ':userId'=>$user_id,
+        ':postID'=>$post_id
+    ]);
+
+    return ($statement->rowCount()==1);
+}
+// get like
+function get_like(){
+    global $db;
+    $statement = $db->query("SELECT * FROM likes");
+
+    return ($statement->fetchAll()) ;
+}
 
 

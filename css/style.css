@@ -216,11 +216,15 @@ body{
     border: none;
     background: #C4C4C4;
     font-size: 1.1rem;
+    text-decoration: none;
+    color: #000;
 }
 .element_like_comment .comment_element{
     border: none;
     background: #C4C4C4;
     font-size: 1.1rem;
+    text-decoration: none;
+    color: #000;
 }
 
 
