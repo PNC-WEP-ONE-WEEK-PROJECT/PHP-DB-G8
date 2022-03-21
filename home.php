@@ -33,7 +33,7 @@ session_start();
         }
     ?>
         <div class="menu">
-            <a class="" aria-current="page" href="home.php"><i class="fas fa-home fs-4  <?php if($page != 'home.php'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="home"></i></a>
+            <a class="" aria-current="page" href="#"><i class="fas fa-home fs-4  <?php if($page != 'home.php'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="home"></i></a>
             <a class="" href="friends_view.php?pages=friend_view"><i class="fas fa-users  fs-4 <?php if($page == 'friends_view'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="friends"></i></a>            
         </div>
         <div class="sideba_left">
@@ -59,7 +59,7 @@ require_once("models/post.php");
     <div class="user_decri">
         <img src="images/user_ph.png" alt="" class="pro_user" >
         <form action="../controllers/create_post.php"  method="post" class="form_staus">
-            <input type="text" name="description" class="input"  placeholder="What are you thinking about..............">
+            <input type="text" name="description" class="input"  placeholder="What is you feeling...?">
             <input type="submit"  value="post" class="btn_input">
         </form>
     </div>
