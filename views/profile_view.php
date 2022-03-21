@@ -43,9 +43,8 @@ require_once("../models/post.php");
     ?>
         <div class="menu">
             <a class="" aria-current="page" href="../home.php"><i class="fas fa-home fs-4  <?php if($page != 'home.php'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="home"></i></a>
-            <a class="" href="../index.php?pages=news_view"><i  class="fas fa-globe-americas  fs-4 <?php if($page == 'news_view'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>"  id="news"></i></a>
-            <a  class="" href="../index.php?pages=friend_view"><i class="fas fa-users  fs-4 <?php if($page == 'friend_view'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="friends"></i></a>
-            <a  class="" href="../index.php?pages=notification"><i class="fas fa-bell  fs-4 <?php if($page == 'notification'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="notifigetion"></i></a>
+            <a  class="" href="../friends_view.php?pages=friends_view"><i class="fas fa-users fs-4 <?php if($page == 'friends_view'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="friends"></i></a>
+        
             
         </div>
         <div class="sideba_left">

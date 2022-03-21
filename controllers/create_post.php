@@ -1,7 +1,6 @@
 <?php 
  
     session_start();
-    
     require_once("../templates/header.php");
     require_once("../models/post.php");
 
@@ -13,9 +12,7 @@
     move_uploaded_file($_FILES['myfile']['tmp_name'],$target);
     $file_name = $_FILES['myfile']['name'];
 
-    
     createPost($description_post,$file_name, $_SESSION['id']);
-
     header('location: /home.php');
 
 

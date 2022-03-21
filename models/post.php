@@ -88,7 +88,6 @@ function adduser($user_name,$user_gender,$user_birth,$user_email,$user_password)
         ':birth'=>$user_birth,
         ':email_user'=>$user_email,
         ':password_user'=>$user_password
-        
     ]);
     return ($statement->rowCount()==1);
 }
@@ -134,4 +133,26 @@ function get_like(){
     return ($statement->fetchAll()) ;
 }
 
+
+function getFriend()
+{
+    global $db;
+    $statement = $db->prepare("SELECT id_fri, name_fri,id_user FROM friends ORDER BY id_fri DESC;");
+    $statement->execute();
+    $postItems = $statement->fetchAll();
+    return $postItems;
+}
+
+
+// Unfriend from my friends list.
+function deleteFriend($id)
+{
+    global $db;
+    $statement=$db->prepare("DELETE FROM friends WHERE id_fri=:id;");
+    $statement->execute(
+        [
+            ':id'=>$id
+        ]);
+    return ($statement-> rowCount()==1);
+}
 
