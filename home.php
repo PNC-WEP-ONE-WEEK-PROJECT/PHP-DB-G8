@@ -97,8 +97,13 @@ foreach ($postImformation as $informationOfPost):
 
         </div>
     </div>
-
+    
 </div>
+<div class="showElementPost comments_bar">
+salhdflasfdladlsdf
+</div>
+
+
     <?php
     endforeach
     ?>
