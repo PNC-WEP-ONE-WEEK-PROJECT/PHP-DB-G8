@@ -125,13 +125,47 @@ function like_post($user_id, $post_id){
     ]);
 
     return ($statement->rowCount()==1);
-}
+};
 // get like
 function get_like(){
     global $db;
     $statement = $db->query("SELECT * FROM likes");
 
     return ($statement->fetchAll()) ;
+};
+
+// insert comment to db
+
+function comment_post($user_id,$post_id,$comment_user){
+    global $db;
+    $statement = $db->prepare("INSERT INTO comments (id_user,id_post,comment) VALUES (:userId, :postID, :comment);");
+    $statement->execute([
+        ':userId'=>$user_id,
+        ':postID'=>$post_id,
+        ':comment' =>$comment_user
+    ]);
+
+    return ($statement->rowCount()==1);
+};
+// get comment from db
+function get_comment(){
+    global $db;
+    $statement = $db->query("SELECT * FROM comments");
+
+    return ($statement->fetchAll()) ;
+};
+
+// delete commemt from user post
+// Function Delete element by using id of table posts.
+function deleteComment($com_id,$post_id)
+{
+    global $db;
+    $statement=$db->prepare("DELETE FROM comments WHERE id_post=:id_post AND id_comment=:id_com;");
+    $statement->execute(
+        [
+            ':id_post'=>$post_id,
+            'id_com'=>$com_id
+
+        ]);
+    return ($statement-> rowCount()==1);
 }
-
-

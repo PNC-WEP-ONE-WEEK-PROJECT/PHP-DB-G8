@@ -369,3 +369,41 @@ body{
 .comments_bar{
     margin-top: -1.9rem;
 }
+.comments_bar .comment_user_box{
+    width: 88%;
+    display: flex;
+    margin: auto;
+
+    
+}
+.comments_bar .comment_user_box .input_comment{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0.5rem 10px;
+    
+}
+.comments_bar .comment_user_box .btn_comment{
+    border: none;
+    padding: 0.5rem 2rem;
+    background: #5d8fc9;
+    color: rgb(231, 229, 224);
+}
+
+.comments_bar .show_commit .user_commer{
+    width: 88%;
+    margin: auto;
+    margin-top: 1rem;
+    background: rgb(182, 179, 179);
+    padding: 0.5rem 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.btn_comment{
+    border: none;
+    background: none;
+    
+
+
+}
