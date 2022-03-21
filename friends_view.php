@@ -50,7 +50,7 @@
     <div class="friends">
             <div class="myfriends">
                 <div class="eachfriend">
-                    <img src="images/user_ph.png" alt="">
+                    <img src="images/friend.png" alt="">
                     <h3> <?= $friend['name_fri']?> </h3>
                 </div>
                 <a href="controllers/delete_friend.php?id=<?php echo $friend['id_fri']; ?>"> <button class='unfriend' >Unfriend</button>  </a>

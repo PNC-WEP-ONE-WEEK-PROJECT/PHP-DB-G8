@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2022 at 02:11 PM
+-- Generation Time: Mar 21, 2022 at 02:40 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -35,12 +35,36 @@ CREATE TABLE `comments` (
   `id_post` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `comments`
+-- Table structure for table `friends`
 --
 
-INSERT INTO `comments` (`id_comment`, `comment_date`, `comment`, `id_user`, `id_post`) VALUES
-(0, '2022-03-20 13:09:45', 'You are good looking.', 3, 67);
+CREATE TABLE `friends` (
+  `id_fri` int(11) NOT NULL,
+  `name_fri` varchar(100) DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `friends`
+--
+
+INSERT INTO `friends` (`id_fri`, `name_fri`, `id_user`) VALUES
+(24, 'Dyna', 3),
+(25, 'Bopha', 3),
+(26, 'Dody', 3),
+(28, 'Meta', 3),
+(29, 'Dana', 3),
+(30, 'Sa', 3),
+(31, 'Sros', 3),
+(32, 'Dava', 3),
+(33, 'Donka', 3),
+(34, 'Rosa', 3),
+(35, 'Coca', 3),
+(36, 'Sara', 3),
+(37, 'Sofa', 3);
 
 -- --------------------------------------------------------
 
@@ -52,13 +76,6 @@ CREATE TABLE `likes` (
   `id_post` int(11) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `likes`
---
-
-INSERT INTO `likes` (`id_post`, `id_user`) VALUES
-(67, 3);
 
 -- --------------------------------------------------------
 
@@ -93,16 +110,8 @@ CREATE TABLE `userposts` (
 --
 
 INSERT INTO `userposts` (`id_post`, `description_post`, `date_post`, `images`, `id_user`) VALUES
-(67, 'Hello, Our group will present about facebook version 2. So, let\'s start!', '2022-03-20 09:52:23', NULL, 3),
-(68, ' Hello!', '2022-03-20 09:52:38', '2.png', 3),
-(69, 'I am so happy this week!', '2022-03-20 09:53:37', NULL, 2),
-(70, 'I am so happy this week!', '2022-03-20 09:55:18', NULL, 3),
-(71, ' hi', '2022-03-20 09:55:29', 'Group 4.jpg', 3),
-(72, 'I am so happy this week!', '2022-03-20 09:55:45', NULL, 3),
-(75, ' sdasdsfdafd ', '2022-03-20 10:47:18', 'Group 2.jpg', 7),
-(78, ' sadf ggg', '2022-03-20 11:16:34', 'IMG_0924.jpg', 7),
-(83, 'Hello, Our group will present about facebook version 2. So, let\'s start!', '2022-03-20 12:24:45', NULL, 8),
-(84, ' gy hg', '2022-03-20 12:33:09', 'image_2022_02_24T08_03_29_908Z.png', 8);
+(106, ' I am a girl.', '2022-03-21 12:39:30', 'image-62296af7108246.04371375.jpg', 2),
+(107, ' I am a boy.', '2022-03-21 12:39:46', 'image_2022_02_24T08_03_29_908Z.png', 2);
 
 -- --------------------------------------------------------
 
@@ -129,11 +138,12 @@ INSERT INTO `users` (`id_user`, `name`, `gender_gender`, `age_user`, `phonenumbe
 (2, 'Dara', 'M', NULL, NULL, 'dara@gmail.com', '123ert', NULL),
 (3, 'Pheak', 'M', NULL, NULL, 'pheak@gmail.com', 'p3535', NULL),
 (4, 'Dara', 'M', NULL, NULL, 'dara@gmail.com', '123ert', NULL),
-(5, 'asdfgh', 'F', NULL, NULL, 'sdfghjk7654323456789', 'dfghkjdfghgjhljv', ''),
 (6, 'Pheak', 'M', NULL, NULL, 'pheak@gmail.com', '567tyu', '2022-02-28'),
-(7, 'a', 'F', NULL, NULL, 'dara@gmail.com', 'a', '2022-03-14'),
 (8, 'sarath', 'M', NULL, NULL, 'sarath@gmail.com', '1234', '2022-03-23'),
-(9, ' Star', 'M', NULL, NULL, 'star@gmail.com', '1234d', '');
+(9, ' Star', 'M', NULL, NULL, 'star@gmail.com', '1234d', ''),
+(11, ' Star', 'F', NULL, NULL, 'pheak@gmail.com', '23', '2022-03-01'),
+(12, 'dy', 'F', NULL, NULL, 'dy@gmail.com', '45', '2022-03-02'),
+(13, 'Kea', 'F', NULL, NULL, 'Kea@gmail.com', '12', '2022-03-02');
 
 -- --------------------------------------------------------
 
@@ -155,6 +165,13 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id_comment`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `id_post` (`id_post`);
+
+--
+-- Indexes for table `friends`
+--
+ALTER TABLE `friends`
+  ADD PRIMARY KEY (`id_fri`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `likes`
@@ -181,16 +198,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `friends`
+--
+ALTER TABLE `friends`
+  MODIFY `id_fri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
 -- AUTO_INCREMENT for table `userposts`
 --
 ALTER TABLE `userposts`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -202,6 +231,12 @@ ALTER TABLE `users`
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE,
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`id_post`) REFERENCES `userposts` (`id_post`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `friends`
+--
+ALTER TABLE `friends`
+  ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `likes`
