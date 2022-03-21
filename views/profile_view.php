@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 require_once("../models/post.php");
 ?>
 <!DOCTYPE html>
@@ -53,12 +56,14 @@ require_once("../models/post.php");
         </div>
 
     </nav>
-
+<?php
+$nameofuser=$_SESSION['name'];
+?>
 <div class="contener_profile">
     <div class="profile_user">
-        <img src="../images/Group 4.jpg" alt="">
+        <img src="../images/user_ph.png" alt="">
         <div class="all_inforUser">
-            <div class="nameOfuser">sarath orn</div>
+            <div class="nameOfuser"><?= $nameofuser ?> </div>
             <div class="genderOfuser">M</div>
             <div class="birthOfuser">2022-09-87</div>
 
@@ -80,7 +85,7 @@ foreach ($postImformation as $informationOfPost):
         <div class="user_decri">
             <img src="../images/user_ph.png" alt="" class="pro_user" >
             <div class="infor">
-                <div class="user_name">Sarath Orn</div>
+                <div class="user_name"><?= $nameofuser ?></div>
                 <div class="date">
                     <?php date_default_timezone_set('Asia/Phnom_Penh'); ?>
                     <?= $informationOfPost['date_post'] = date("D M j Y G:i:s a"); ?>
@@ -117,7 +122,7 @@ foreach ($postImformation as $informationOfPost):
     </div>
 
    
-    
+
     <div class="line"></div>
     <?php
     $liker =get_like();
@@ -133,10 +138,10 @@ foreach ($postImformation as $informationOfPost):
     </div>
     <div class="element_like_comment">
         <div>
-            <a href="#" class="like_element"><i class="fas fa-thumbs-up img_btnpost"></i> Like</a> 
+            <a href="controllers/like_post.php?id_post=<?php echo $informationOfPost['id_post']; ?>" class="like_element"><i class="fas fa-thumbs-up img_btnpost"></i> Like</a> 
         </div>
         <div>
-            <button class="comment_element"><i class="fas fa-comment-alt img_btnpost"></i> Comment</button> 
+            <a href=""  class="comment_element"><i class="fas fa-comment-alt img_btnpost"></i> Comment</a> 
 
         </div>
     </div>

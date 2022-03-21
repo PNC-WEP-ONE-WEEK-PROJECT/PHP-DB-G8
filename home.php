@@ -31,7 +31,7 @@ $postImformation = getPosts();
 $nameUser = getUserName();
 
 foreach ($postImformation as $informationOfPost):
-    $nameofusser=$_SESSION['name'];
+    $nameofuser=$_SESSION['name'];
 ?>
 
 <div class="showElementPost ">
@@ -39,7 +39,7 @@ foreach ($postImformation as $informationOfPost):
         <div class="user_decri">
             <img src="images/user_ph.png" alt="" class="pro_user" >
             <div class="infor">
-                <div class="user_name"><?php echo $nameofusser ?></div>
+                <div class="user_name"><?php echo $nameofuser ?></div>
                 <div class="date">
                     <?php date_default_timezone_set('Asia/Phnom_Penh'); ?>
                     <?= $informationOfPost['date_post'] = date("D M j Y G:i:s a"); ?>
@@ -49,8 +49,6 @@ foreach ($postImformation as $informationOfPost):
         <div class="item_crud">
             <a href="views/edit_view.php?id=<?php echo $informationOfPost['id_post']; ?>"><i class="fas fa-edit img_btnpost edit"></i></a>
             <a href="controllers/delete_post.php?id=<?php echo $informationOfPost['id_post']; ?>"><i class="fas fa-trash img_btnpost delete"> </i></a>
-
-            
         </div>
         
     </div>

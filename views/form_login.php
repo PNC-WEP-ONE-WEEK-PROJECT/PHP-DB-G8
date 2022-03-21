@@ -11,6 +11,9 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
 </head>
 <body>
     <!-- home  -->
@@ -34,11 +37,11 @@ session_start();
         <input type="hidden" value='' >
 
             <div>
-                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
             </div>
             <div>
                 
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
             </div>
 
             <button type="submit" class="btn-primary form-control">Login in</button>
@@ -53,8 +56,6 @@ session_start();
     </div>
     <?php
 
-        // require_once("models/post.php");
-        // $userItems = getUsers();
         foreach($userItems as $user) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $userName = $user['name'];
@@ -73,16 +74,15 @@ session_start();
                         $_SESSION['name'] = $name;
                         header('Location: home.php');
                     }
-                    
                 } 
                 
                 // else {
                 //     echo '<script>alert("Please login again because your name and password are not valid")</script>';
                     
                 // }
+
             }
         }
-        
     ?>
 
 </body>
