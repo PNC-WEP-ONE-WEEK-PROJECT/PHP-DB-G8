@@ -29,6 +29,7 @@ require_once("models/post.php");
 <?php
 $postImformation = getPosts();
 $nameUser = getUserName();
+
 foreach ($postImformation as $informationOfPost):
     $nameofuser=$_SESSION['name'];
 ?>
@@ -73,15 +74,24 @@ foreach ($postImformation as $informationOfPost):
     </div>
     
     <div class="line"></div>
+    <?php
+    $liker =get_like();
+    $increseLike=0;
+    foreach ($liker as $numLike){
+        if($informationOfPost['id_post']==$numLike['id_post']){
+            $increseLike+=1;
+        }
+    }
+    ?>
     <div class="like_place">
-        1LIKE
+        <?= $increseLike?>
     </div>
     <div class="element_like_comment">
         <div>
-            <button class="like_element"><i class="fas fa-thumbs-up img_btnpost"></i> Like</button> 
+            <a href="controllers/like_post.php?id_post=<?php echo $informationOfPost['id_post']; ?>" class="like_element"><i class="fas fa-thumbs-up img_btnpost"></i> Like</a> 
         </div>
         <div>
-            <button class="comment_element"><i class="fas fa-comment-alt img_btnpost"></i> Comment</button> 
+            <a href=""  class="comment_element"><i class="fas fa-comment-alt img_btnpost"></i> Comment</a> 
 
         </div>
     </div>

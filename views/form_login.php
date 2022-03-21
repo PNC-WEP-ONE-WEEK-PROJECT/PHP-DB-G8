@@ -74,7 +74,13 @@ session_start();
                         $_SESSION['name'] = $name;
                         header('Location: home.php');
                     }
-                }
+                } 
+                
+                // else {
+                //     echo '<script>alert("Please login again because your name and password are not valid")</script>';
+                    
+                // }
+
             }
         }
     ?>
