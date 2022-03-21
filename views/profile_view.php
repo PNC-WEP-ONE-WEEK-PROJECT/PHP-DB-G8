@@ -142,10 +142,10 @@ foreach ($postImformation as $informationOfPost):
     </div>
     <div class="element_like_comment">
         <div>
-            <a href="controllers/like_post.php?id_post=<?php echo $informationOfPost['id_post']; ?>" class="like_element"><i class="fas fa-thumbs-up img_btnpost"></i> Like</a> 
+            <a href="#" class="like_element"><i class="fas fa-thumbs-up img_btnpost"></i> Like</a> 
         </div>
         <div>
-            <a href=""  class="comment_element"><i class="fas fa-comment-alt img_btnpost"></i> Comment</a> 
+            <a href="#"  class="comment_element"><i class="fas fa-comment-alt img_btnpost"></i> Comment</a> 
 
         </div>
     </div>
