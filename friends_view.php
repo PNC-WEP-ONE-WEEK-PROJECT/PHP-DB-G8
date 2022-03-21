@@ -32,10 +32,10 @@
     ?>
         <div class="menu">
             <a class="" aria-current="page" href="home.php"><i class="fas fa-home fs-4  <?php if($page == 'home.php'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="home"></i></a>
-            <a class="" href="#"><i class="fas fa-users  fs-4 <?php if($page == 'friend_view'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="friends"></i></a>            
+            <a class="" href="#"><i class="fas fa-users  fs-4 text-primary" id="friends"></i></a>            
         </div>
         <div class="sideba_left">
-            <a href="views/profile_view.php" class="profile">
+            <a href="views/profile_view.php" class="profile"> 
                 <img src="images/user_ph.png "class="img_pro " alt="">
             </a>
             <a href="index.php">LOG OUT</a>

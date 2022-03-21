@@ -42,9 +42,14 @@ require_once("../models/post.php");
         }
     ?>
         <div class="menu">
-            <a class="" aria-current="page" href="../home.php"><i class="fas fa-home fs-4  <?php if($page != 'home.php'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="home"></i></a>
-            <a  class="" href="../friends_view.php?pages=friends_view"><i class="fas fa-users fs-4 <?php if($page == 'friends_view'){ echo 'active text-primary';}else{echo 'active text-muted';} ?>" id="friends"></i></a>
+            <a class="" aria-current="page" href="../home.php"><i class="fas fa-home fs-4 text-muted " id="home"></i></a>
+
+            <a  class="" href="../friends_view.php?pages=friends_view"><i class="fas fa-users fs-4 text-muted " id="friends"></i></a>
         
+
+        
+  
+
             
         </div>
         <div class="sideba_left">

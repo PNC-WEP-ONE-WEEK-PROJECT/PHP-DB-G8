@@ -141,11 +141,62 @@ foreach ($postImformation as $informationOfPost):
 
         </div>
     </div>
-
+    
 </div>
+
+<div class="showElementPost comments_bar">
+    <form action="controllers/comment_post.php?id_post=<?php echo $informationOfPost['id_post']; ?>" method="post" >
+        <div class="comment_user_box">
+            <input type="text" class="input_comment" placeholder="your message" name="user_message" required>
+            <button class="btn_comment" type="submit">
+                Sent
+
+            </button>
+        </div>
+    </form>
+        <div class="show_commit" id="eleShowComment">
+            <?php
+             $commentFromUser = get_comment();
+             
+            //  print_r($commentFromUser);
+
+            // }
+            foreach ($commentFromUser as $messageFromComment):
+                
+
+            ?>
+            <?php
+             if($informationOfPost['id_post']==$messageFromComment['id_post']){
+                //  foreach ($commentFromUser as $messageFromComment){
+                 ?>
+                <div class="user_commer">   
+                    <?= $messageFromComment["comment"]?>
+                    <form action="controllers/delete_comment.php?id=<?php echo $informationOfPost['id_post']; ?>" method="post">
+                        <input type="hidden" value="<?= $informationOfPost['id_post'];?> " name="posts_id">
+                        <input type="hidden" value="<?= $messageFromComment['id_comment'];?> " name="comments_id">
+                        <button class="btn_comment" type="sumbit"><i class="fas fa-trash img_btnpost delete"  style ="color:red; "> </i></button>
+
+                    </form>
+                </div>
+                <?php
+             }
+             ?>
+            <?php
+                endforeach;
+            ?>
+
+        </div>
+        
+
+  
+</div>
+
+
+
     <?php
     endforeach
     ?>
+
 
 <?php
 require_once("templates/footer.php");

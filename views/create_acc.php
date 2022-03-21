@@ -104,7 +104,7 @@ p{
 
 <form action="../controllers/create_user.php" style="border:1px solid #ccc" class="sign_up"  method="post">
   <div class="container">
-    <h1>SIGN IN</h1>
+    <h1>SIGN UP</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
