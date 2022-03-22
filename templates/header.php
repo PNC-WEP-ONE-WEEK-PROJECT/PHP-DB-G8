@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- nav_bar -->
     <nav class="nav_bar">
         <div class="logo">
             Facebook

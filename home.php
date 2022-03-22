@@ -1,3 +1,4 @@
+<!-- use session to store information user -->
 <?php
 session_start();
 ?>
@@ -24,6 +25,7 @@ session_start();
         <div class="logo">
             Facebook
         </div>
+        <!-- get the name of page -->
         <?php
         $page = "";
         if (isset($_GET['pages'])) {
@@ -73,7 +75,9 @@ require_once("models/post.php");
 
 <!-- form display post -->
 <?php
+// get all item from post
 $postImformation = getPosts();
+// get the name of user
 $nameUser = getUserName();
 
 foreach ($postImformation as $informationOfPost):
@@ -121,7 +125,9 @@ foreach ($postImformation as $informationOfPost):
     
     <div class="line"></div>
     <?php
+    // call the funtion like 
     $liker =get_like();
+    // varrible to store number of like
     $increseLike=0;
     foreach ($liker as $numLike){
         if($informationOfPost['id_post']==$numLike['id_post']){
@@ -158,16 +164,13 @@ foreach ($postImformation as $informationOfPost):
             <?php
              $commentFromUser = get_comment();
              
-            //  print_r($commentFromUser);
-
-            // }
             foreach ($commentFromUser as $messageFromComment):
                 
 
             ?>
             <?php
              if($informationOfPost['id_post']==$messageFromComment['id_post']){
-                //  foreach ($commentFromUser as $messageFromComment){
+          
                  ?>
                 <div class="user_commer">   
                     <?= $messageFromComment["comment"]?>

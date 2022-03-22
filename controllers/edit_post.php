@@ -1,7 +1,7 @@
 <?php
 require_once('../models/post.php');
 
-
+// get information from post
 $id_post= $_POST['postID'];
 $description_post= $_POST['descripe'];
 $image=$_POST['myfile'];

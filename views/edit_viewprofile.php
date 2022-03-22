@@ -11,6 +11,7 @@ require_once("../models/post.php");
 <div class="container_post_view">
     <!-- Your code here -->
     <?php
+    // get id from db post
         $post_id = $_GET['id'];
         
         $itempost = getPostById($post_id);

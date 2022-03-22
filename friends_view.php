@@ -43,7 +43,7 @@
     </nav>
     <h3 class='title'>List of my friends</h3>
     <?php
-        
+        // get element from friend
         $friends = getFriend();
         foreach ($friends as $friend){
     ?>

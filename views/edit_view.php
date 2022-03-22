@@ -4,6 +4,7 @@
  * Your code here
  */
 require_once("../templates/header.php");
+// call page post
 require_once("../models/post.php");
 
 ?>
@@ -11,6 +12,7 @@ require_once("../models/post.php");
 <div class="container_post_view">
     <!-- Your code here -->
     <?php
+    // call id from poat
         $post_id = $_GET['id'];
         
         $itempost = getPostById($post_id);

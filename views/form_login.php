@@ -55,31 +55,32 @@ session_start();
         </form>
     </div>
     <?php
-
+// loop on db user to get the element from it
         foreach($userItems as $user) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // user form db
                 $userName = $user['name'];
+                // password from db
                 $userPass = $user['password_user'];
+                // id from db
                 $userId = $user['id_user'];
-    
+                
+                // user name from input
                 $name = $_POST['username'];
+                // password from input
                 $password = $_POST['pswd'];
     
                 if (!empty($name) and !empty($password) and $name == $userName) {
                     $test = password_hash($password,PASSWORD_DEFAULT);
-        
+                    // commpare the name and password from user input with name and user from db
                     if(password_verify($userPass, $test)) {
-                        // $_SESSION['login'] = $name;
+                    //   set name and id in session
                         $_SESSION['id'] = $userId ;
                         $_SESSION['name'] = $name;
                         header('Location: home.php');
                     }
                 } 
                 
-                // else {
-                //     echo '<script>alert("Please login again because your name and password are not valid")</script>';
-                    
-                // }
 
             }
         }

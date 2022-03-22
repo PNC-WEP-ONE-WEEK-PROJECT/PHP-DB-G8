@@ -1,10 +1,4 @@
-<!-- HEADER -----------------------------------------  -->
-<?php
 
-
-    // require_once('templates/header.php');
-
-?>
 <!-- MAIN -----------------------------------------  -->
 <div class="main-content">
     <main>
@@ -31,7 +25,3 @@
         ?>
     </main>
 </div>
-<!-- FOOTER -----------------------------------------  -->
-<?php
-require_once('templates/footer.php');
-?>

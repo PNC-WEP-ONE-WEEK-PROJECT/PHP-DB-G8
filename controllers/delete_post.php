@@ -8,7 +8,7 @@ $id =$_GET['id'];
 $deleteSucess= deletePost($id);
 
 if($deleteSucess){
-    header('location: /home.php');//when we remove it have don't show the wirte bg
+    header('location: /home.php');//got to home page
 
 }else{
     echo"Cannot delete item with id ".$id;

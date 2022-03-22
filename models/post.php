@@ -92,7 +92,7 @@ function adduser($user_name,$user_gender,$user_birth,$user_email,$user_password)
     return ($statement->rowCount()==1);
 }
 
-
+// selete user form table users
 function getUsers()
 {
     global $db;
@@ -102,7 +102,7 @@ function getUsers()
     return $postItems;
 }
 
-
+// selete the name of user from table users
 function getUserName() {
     global $db;
     $statement = $db->prepare("SELECT users.name
@@ -125,6 +125,7 @@ function like_post($user_id, $post_id){
 
     return ($statement->rowCount()==1);
 };
+
 // get like
 function get_like(){
     global $db;
@@ -134,7 +135,6 @@ function get_like(){
 };
 
 // insert comment to db
-
 function comment_post($user_id,$post_id,$comment_user){
     global $db;
     $statement = $db->prepare("INSERT INTO comments (id_user,id_post,comment) VALUES (:userId, :postID, :comment);");
@@ -146,6 +146,7 @@ function comment_post($user_id,$post_id,$comment_user){
 
     return ($statement->rowCount()==1);
 };
+
 // get comment from db
 function get_comment(){
     global $db;
@@ -170,7 +171,7 @@ function deleteComment($com_id,$post_id)
 }
 
 
-
+//select name of friends from table friend
 function getFriend()
 {
     global $db;

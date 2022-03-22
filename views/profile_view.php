@@ -1,3 +1,4 @@
+<!-- user session to store information form user -->
 <?php
 session_start();
 ?>
@@ -61,6 +62,7 @@ require_once("../models/post.php");
 
     </nav>
 <?php
+// call the name of user that we all ready store in session
 $nameofuser=$_SESSION['name'];
 ?>
 <div class="contener_profile">
@@ -81,6 +83,7 @@ $nameofuser=$_SESSION['name'];
 </div>
 
 <?php
+// call element from post
 $postImformation = getPosts();
 foreach ($postImformation as $informationOfPost):
 ?>
@@ -91,6 +94,7 @@ foreach ($postImformation as $informationOfPost):
             <div class="infor">
                 <div class="user_name"><?= $nameofuser ?></div>
                 <div class="date">
+                    <!-- set the time in cambodia -->
                     <?php date_default_timezone_set('Asia/Phnom_Penh'); ?>
                     <?= $informationOfPost['date_post'] = date("D M j Y G:i:s a"); ?>
                 </div>
